@@ -38,256 +38,36 @@ new Swiper('.trending-card-wrapper', {
 
 
 
-// const map = new Map();
-// let total = 0;
+// const emailInput = document.getElementById('email-input');
 
-// const addToCart = (name, price) => {
+// emailInput.addEventListener('input', () => {
+//   const emailValue = emailInput.value;
+//   localStorage.setItem('email', emailValue);
+// });
 
-//   let quantity = map.get(name);
-//   const refreshTotalPrice = () => {
-//     const totalValue = document.querySelector('.total-value');
-    
-//     if (totalValue) {
-//       totalValue.innerHTML = '$' + total;
-//     }
-//     if (quantity) {
-//       quantity.innerHTML = map.get(name);
-//     }
-//   };
-
-//   // Increment and decrement total price
-//   const addTotalPrice = () => {
-//     total += price;
-//     // quantity+=1;
-//     map.set(name, (map.get(name) || 0) + 1);
-//     refreshTotalPrice();
-//   };
-
-//   const removeTotalPrice = () => {
-//     total -= price;
-//     // quantity-=1;
-//     map.set(name, (map.get(name) || 0) - 1);
-//     if (total < 0) total = 0; // Prevent negative total
-//     refreshTotalPrice();
-//   };
-
-//   // Check if total-tab already exists
-//   const offset = document.getElementById('cart');
-//   let totalTab = document.querySelector('.total-tab');
-//   if (!totalTab) {
-//     totalTab = document.createElement('div');
-//     const totalText = document.createElement('div');
-//     const totalValue = document.createElement('div');
-
-//     totalTab.classList.add('total-tab');
-//     totalText.classList.add('total-text');
-//     totalValue.classList.add('total-value');
-
-//     totalText.innerHTML = 'Total';
-//     total+=price;
-//     refreshTotalPrice();
-//     totalValue.innerHTML = '$' + total;
-
-//     totalTab.appendChild(totalText);
-//     totalTab.appendChild(totalValue);
-//     totalTab.style.display = 'flex';
-//     offset.appendChild(totalTab);
-//   }
-
-//   // Update cart map
-//   map.set(name, (map.get(name) || 0) + 1);
-
-//   // Check if item already exists in cart
-//   const existingItem = document.querySelector(`.cart-item[data-name="${name}"]`);
-//   if (existingItem) {
-//     const itemQuantity = existingItem.querySelector('.cart-item-quantity');
-//     itemQuantity.innerHTML = map.get(name);
-//   } else {
-//     // Create new cart item
-//     const item = document.createElement('div');
-//     item.classList.add('cart-item');
-//     item.setAttribute('data-name', name);
-
-//     const itemName = document.createElement('div');
-//     itemName.classList.add('cart-item-name');
-//     itemName.innerHTML = name;
-
-//     const itemQuantity = document.createElement('div');
-//     itemQuantity.classList.add('cart-item-quantity');
-//     refreshTotalPrice();
-//     itemQuantity.innerHTML = map.get(name);
-
-//     const itemValue = document.createElement('div');
-//     itemValue.classList.add('cart-item-value');
-
-//     const itemPrice = document.createElement('div');
-//     itemPrice.classList.add('cart-item-price');
-//     itemPrice.innerHTML = '$' + price;
-
-//     const addBtn = document.createElement('button');
-//     addBtn.innerHTML = '+';
-//     addBtn.addEventListener('click', addTotalPrice);
-//     addBtn.classList.add('addbtn');
-
-//     const removeBtn = document.createElement('button');
-//     removeBtn.innerHTML = '-';
-//     removeBtn.addEventListener('click', () => {
-//       if (map.get(name) > 1) {
-//         map.set(name, map.get(name) - 1);
-//         itemQuantity.innerHTML = map.get(name);
-//       } else {
-//         map.delete(name);
-//         total -= price;
-//         refreshTotalPrice();
-//         offset.removeChild(item);
-        
-//       }
-//       removeTotalPrice();
-//     });
-//     removeBtn.classList.add('removebtn');
-
-//     itemValue.appendChild(addBtn);
-//     itemValue.appendChild(itemPrice);
-//     itemValue.appendChild(removeBtn);
-//     item.appendChild(itemName);
-//     item.appendChild(itemQuantity);
-//     item.appendChild(itemValue);
-//     offset.appendChild(item);
-//   }
-// };
+// emailInput.addEventListener('click', () => {
+//   console.log('email input clicked');
+// });
 
 
-// const map = new Map();
-// let total = 0;
 
-// const addToCart = (name, price) => {
-//   // Update total price display
-//   const refreshTotalPrice = () => {
-//     const totalValue = document.querySelector('.total-value');
-//     if (totalValue) {
-//       totalValue.innerHTML = '$' + total.toFixed(2); // Ensure consistent formatting
-//     }
-//   };
 
-//   // Update specific item's quantity display
-//   const refreshTotalQuantity = (itemName) => {
-//     const itemQuantity = document.querySelector(`.cart-item[data-name="${itemName}"] .cart-item-quantity`);
-//     if (itemQuantity) {
-//       itemQuantity.innerHTML = map.get(itemName);
-//     }
-//   };
 
-//   // Increment and decrement total price
-//   const addTotalPrice = () => {
-//     total += price;
-//     map.set(name, (map.get(name) || 0) + 1);
-//     refreshTotalPrice();
-//     refreshTotalQuantity(name);
-//   };
-
-//   const removeTotalPrice = () => {
-//     if (map.get(name) > 0) {
-//       total -= price;
-//       map.set(name, map.get(name) - 1);
-//       if (total < 0) total = 0; // Prevent negative total
-//       refreshTotalPrice();
-//       refreshTotalQuantity(name);
-//     }
-//     if (map.get(name) === 0) {
-//       const itemToRemove = document.querySelector(`.cart-item[data-name="${name}"]`);
-//       if (itemToRemove) {
-//         itemToRemove.remove();
-//         map.delete(name);
-//       }
-//     }
-//   };
-
-//   // Add total-tab if it doesn't exist
-//   const offset = document.getElementById('cart');
-//   let totalTab = document.querySelector('.total-tab');
-//   if (!totalTab) {
-//     totalTab = document.createElement('div');
-//     const totalText = document.createElement('div');
-//     const totalValue = document.createElement('div');
-
-//     totalTab.classList.add('total-tab');
-//     totalText.classList.add('total-text');
-//     totalValue.classList.add('total-value');
-
-//     totalText.innerHTML = 'Total';
-//     total+=price;
-//     refreshTotalPrice();
-//     totalValue.innerHTML = '$' + total.toFixed(2); // Consistent formatting
-
-//     totalTab.appendChild(totalText);
-//     totalTab.appendChild(totalValue);
-//     totalTab.style.display = 'flex';
-//     offset.appendChild(totalTab);
-//   }
-
-//   // Update cart map and check for existing item
-//   map.set(name, (map.get(name) || 0) + 1);
-//   const existingItem = document.querySelector(`.cart-item[data-name="${name}"]`);
-//   if (existingItem) {
-//     const itemQuantity = existingItem.querySelector('.cart-item-quantity');
-//     total += price;
-//     refreshTotalPrice();
-//     itemQuantity.innerHTML = map.get(name);
-//   } else {
-//     // Create a new cart item
-//     const item = document.createElement('div');
-//     item.classList.add('cart-item');
-//     item.setAttribute('data-name', name);
-
-//     const itemName = document.createElement('div');
-//     itemName.classList.add('cart-item-name');
-//     itemName.innerHTML = name;
-
-//     const itemQuantity = document.createElement('div');
-//     itemQuantity.classList.add('cart-item-quantity');
-//     itemQuantity.innerHTML = map.get(name);
-
-//     const itemValue = document.createElement('div');
-//     itemValue.classList.add('cart-item-value');
-
-//     const itemPrice = document.createElement('div');
-//     itemPrice.classList.add('cart-item-price');
-//     itemPrice.innerHTML = '$' + price.toFixed(2); // Consistent formatting
-
-//     const addBtn = document.createElement('button');
-//     addBtn.innerHTML = '+';
-//     addBtn.addEventListener('click', addTotalPrice);
-//     addBtn.classList.add('addbtn');
-
-//     const removeBtn = document.createElement('button');
-//     removeBtn.innerHTML = '-';
-//     removeBtn.addEventListener('click', removeTotalPrice);
-//     removeBtn.classList.add('removebtn');
-
-//     itemValue.appendChild(addBtn);
-//     itemValue.appendChild(itemPrice);
-//     itemValue.appendChild(removeBtn);
-//     item.appendChild(itemName);
-//     item.appendChild(itemQuantity);
-//     item.appendChild(itemValue);
-//     offset.appendChild(item);
-//   }
-// };
 
 
 const map = new Map();
 let total = 0;
 
 const addToCart = (name, price) => {
-  // Update total price display
+  
   const refreshTotalPrice = () => {
     const totalValue = document.querySelector('.total-value');
     if (totalValue) {
-      totalValue.innerHTML = '$' + total.toFixed(2); // Ensure consistent formatting
+      totalValue.innerHTML = '$' + total.toFixed(2); 
     }
   };
 
-  // Update specific item's quantity display
+  
   const refreshTotalQuantity = (itemName) => {
     const itemQuantity = document.querySelector(`.cart-item[data-name="${itemName}"] .cart-item-quantity`);
     if (itemQuantity) {
@@ -295,7 +75,7 @@ const addToCart = (name, price) => {
     }
   };
 
-  // Add total-tab if it doesn't exist
+  
   const offset = document.getElementById('cart');
   let totalTab = document.querySelector('.total-tab');
   if (!totalTab) {
@@ -308,7 +88,7 @@ const addToCart = (name, price) => {
     totalValue.classList.add('total-value');
 
     totalText.innerHTML = 'Total';
-    totalValue.innerHTML = '$' + total.toFixed(2); // Consistent formatting
+    totalValue.innerHTML = '$' + total.toFixed(2); 
 
     totalTab.appendChild(totalText);
     totalTab.appendChild(totalValue);
@@ -316,8 +96,8 @@ const addToCart = (name, price) => {
     offset.appendChild(totalTab);
   }
 
-  // Update total and map for the item
-  total += price; // Increment total here
+  
+  total += price; 
   map.set(name, (map.get(name) || 0) + 1);
 
   refreshTotalPrice(); 
@@ -328,7 +108,7 @@ const addToCart = (name, price) => {
     const itemQuantity = existingItem.querySelector('.cart-item-quantity');
     itemQuantity.innerHTML = map.get(name);
   } else {
-    // Create a new cart item
+    
     const item = document.createElement('div');
     item.classList.add('cart-item');
     item.setAttribute('data-name', name);
@@ -346,7 +126,7 @@ const addToCart = (name, price) => {
 
     const itemPrice = document.createElement('div');
     itemPrice.classList.add('cart-item-price');
-    itemPrice.innerHTML = '$' + price.toFixed(2); // Consistent formatting
+    itemPrice.innerHTML = '$' + price.toFixed(2); 
 
     const addBtn = document.createElement('button');
     addBtn.innerHTML = '+';
@@ -364,7 +144,7 @@ const addToCart = (name, price) => {
       if (map.get(name) > 0) {
         total -= price;
         map.set(name, map.get(name) - 1);
-        if (total < 0) total = 0; // Prevent negative total
+        if (total < 0) total = 0; 
         refreshTotalPrice();
         refreshTotalQuantity(name);
       }

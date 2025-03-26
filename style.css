@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: whitesmoke; */
+    color: whitesmoke;
     font-family: Montserrat, sans-serif;
 }
 html{
@@ -13,7 +13,9 @@ body{
 }
 
 
+/* .menu-icon{
 
+} */
 
 .hero-container{
     position: relative;
@@ -121,9 +123,18 @@ body{
 .arrow{
     background-color: whitesmoke; 
     color: #6633cc; 
-    padding: 0.3rem 0.6rem; 
+    height: 1.8rem;
+    width: 1.8rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 50%;
     transition: all 0.3s ease-in-out;
+}
+
+.arrow:hover{
+    background-color: #fd6b22;
+    color: whitesmoke;
 }
 
 .arrow >i{
@@ -216,7 +227,7 @@ body{
   
   .featured-ad{
 
-    width: 30rem;
+    width: 36rem;
     display: flex;
     padding: 3rem;
     border-radius: 10px;
@@ -487,7 +498,8 @@ body{
   }
 
  .hidden{
-    opacity: 0 !important; 
+    opacity: 0 !important;
+     
     transition: all 1s;
   }
   .show{
@@ -556,7 +568,7 @@ body{
     justify-content: space-between;
   }
 
-  .cart-item-name, .cart-item-price{
+  .cart-item-name, .cart-item-price, .cart-item-quantity{
     font-size: 0.7rem;
     font-weight: 400;
     width: 5rem;
@@ -608,18 +620,32 @@ body{
     bottom: 1rem;
   }
 
+  @media screen and (max-width:1300px) {
+    .featured-ad-container{
+        grid-template-columns: auto;
+    
+  }
+
+  .hero-subtitle{
+    top: 27rem;
+  }
+
 
 @media screen and (max-width:1090px) {
     .featured-ad{
         width: 25rem;
+        padding: 2rem;
         height: 15rem;
+    }
+    .featured-ad > div{
+      gap: 0.2rem;
     }
 
     .shop-category-container{
         grid-template-columns: auto auto auto;
     }
     .hero-title{
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 }  
 @media screen and (max-width:900px) {
@@ -692,7 +718,7 @@ body{
         position:relative;
         padding: 0 0 0 0 !important;
     }
-    .other-nav-items  button{
+    .cart-icon{
         position: absolute;
         right: 0.7rem;
         top: 34%;
@@ -783,6 +809,12 @@ body{
         width: 14rem;
     }
 
+    .closebtn{
+      position: relative;
+      top: 0;
+      right: 1rem;
+      
+    }
 
      header .topbar-container .topbar-left-container{
         display: none;
@@ -791,6 +823,11 @@ body{
     .dogs-main-container .dogs-img-container img{
       width: 80vw;
       height: auto;
+    }
+
+    .cart-item{
+      gap: 10px;
+      justify-content: center;
     }
     
     
@@ -831,4 +868,4 @@ body{
     .best-dogs-container{
       padding: 3rem 0 3rem 1rem;
     }
-}
+}}

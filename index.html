@@ -79,9 +79,10 @@
                       <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
                   </div>
-                <button type="button icon" data-bs-toggle="offcanvas"
-                    style="background: none; border: none; outline: none; " data-bs-target="#offcanvasRight"
+                <button type="button " data-bs-toggle="offcanvas"
+                    style="background: none; border: none; outline: none; " data-bs-target="#offcanvasRight" class="cart-icon"
                     aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping" style="color: #010409;"></i></button>
+                
 
                 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight"
                     aria-labelledby="offcanvasRightLabel">
@@ -89,12 +90,13 @@
                         <h5 id="offcanvasRightLabel"
                             style="color: #010409;margin-bottom:0 ; ">
                             Your Cart</h5>
-                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                        <button type="button" class="btn-close text-reset closebtn" data-bs-dismiss="offcanvas"
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body" id="cart">
                     </div>
                 </div>
+                
             </div>
         </nav>
 
@@ -596,9 +598,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-    <script src="main.js">
-
-    </script>
+    
 </body>
 
 </html>

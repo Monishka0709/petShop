@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: whitesmoke;
+    /* color: whitesmoke; */
     font-family: Montserrat, sans-serif;
 }
 html{
@@ -13,6 +13,8 @@ body{
 }
 
 
+
+
 .hero-container{
     position: relative;
 }
@@ -21,6 +23,7 @@ body{
   position: absolute;
   top: 13rem;
   left: 2rem;
+  font-weight: 800;
   width: 50%;
   word-wrap: break-word;
   font-size: 4rem;
@@ -282,7 +285,7 @@ body{
     width: 6rem;
     font-weight: 600;
     border-radius: 30px;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     height: 2.5rem;
     
   }
@@ -547,6 +550,65 @@ body{
   }
 
 
+  .cart-item{
+    display: flex;
+    height:4rem ;
+    justify-content: space-between;
+  }
+
+  .cart-item-name, .cart-item-price{
+    font-size: 0.7rem;
+    font-weight: 400;
+    width: 5rem;
+    color: #6633cc;
+    text-align: center;
+    word-wrap: break-word;
+
+
+  }
+
+  .dropdown-toggle{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  .dropdown-toggle::after{
+    display: none !important;
+  }
+
+  .total-text,.total-value{
+    font-size: 1rem;
+    font-weight: 400;
+    width: 5rem;
+    color: #fd6b22;
+    text-align: center;
+    word-wrap: break-word;
+
+
+  }
+  .cart-item-value{
+    display: flex;
+  }
+
+  .addbtn, .removebtn{
+    background-color: #fd6b22;
+    color: whitesmoke;
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 0.5rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .total-tab{
+    position: absolute;
+    right: 1rem;
+    bottom: 1rem;
+  }
+
+
 @media screen and (max-width:1090px) {
     .featured-ad{
         width: 25rem;
@@ -623,15 +685,22 @@ body{
 
 @media screen and (max-width:600px) {
 
-    .topbar-left-container, .topbar-right-container, .other-nav-items {
+    .topbar-left-container, .topbar-right-container, .icon {
         display: none;
     }
     nav{
         position:relative;
+        padding: 0 0 0 0 !important;
+    }
+    .other-nav-items  button{
+        position: absolute;
+        right: 0.7rem;
+        top: 34%;
+
     }
     .search-container{
         position: absolute;
-        right: 5px;
+        right: 2rem;
         font-size: 0.7rem;
         
     }

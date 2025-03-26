@@ -579,6 +579,27 @@ body{
 
   }
 
+  .checkout-button{
+    background-color: #fd6b22;
+    color: whitesmoke;
+    padding: 0.5rem 0.8rem;
+    border-radius: 10px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    transition: background-color 0.3s ease-in-out;
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  .checkout-button:hover{
+    background-color: #6633cc;
+  }
+
   .dropdown-toggle{
     background-color: transparent;
     border: none;

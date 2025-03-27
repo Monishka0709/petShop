@@ -49,7 +49,13 @@ new Swiper('.trending-card-wrapper', {
 //   console.log('email input clicked');
 // });
 
+function openNav() {
+  document.getElementById("mySidenav").style.width = "15rem";
+}
 
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+}
 
 
 
@@ -59,6 +65,14 @@ const map = new Map();
 let total = 0;
 
 const addToCart = (name, price) => {
+
+  const checkoutbtn = document.getElementById('checkout-btn');
+  if (checkoutbtn) {
+    checkoutbtn.style.display = 'block';
+  }
+  
+  map.set(name, map.get(name) ? map.get(name) + 1 : 1);
+  total += price;
   
   const refreshTotalPrice = () => {
     const totalValue = document.querySelector('.total-value');

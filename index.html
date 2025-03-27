@@ -68,18 +68,18 @@
             </div>
             <div class="logo-container"><img src="./assets/logo.png" alt=""> </div>
             <div class="other-nav-items">
-                <div class="icon"><i class="fa-regular fa-user" style="color: #010409;"></i></div>
+                
                 <div class="dropdown">
                     <button class="dropdown-toggle icon" data-bs-toggle="dropdown" aria-expanded="false" >
                         <i class="fa-regular fa-user" style="color: #010409;"></i>
                     </button>
                     <ul class="dropdown-menu">
                       <li><a class="dropdown-item" href="./login.html">Login</a></li>
-                      <li><a class="dropdown-item" href="#">Account</a></li>
+                      <li><a class="dropdown-item" href="./account.html">Account</a></li>
                       <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
                   </div>
-                <button type="button " data-bs-toggle="offcanvas"
+                <button type="button icon" data-bs-toggle="offcanvas"
                     style="background: none; border: none; outline: none; " data-bs-target="#offcanvasRight" class="cart-icon"
                     aria-controls="offcanvasRight"><i class="fa-solid fa-cart-shopping" style="color: #010409;"></i></button>
                 
@@ -94,11 +94,12 @@
                             aria-label="Close"></button>
                     </div>
                     <div class="offcanvas-body" id="cart">
-                        <a href="./checkout.html"><button class="checkout-button"> <div>Checkout</div><div> <i class="fa-solid fa-angle-right"></i></div></button></a>
+                        <a href="./checkout.html" id="checkout-btn"><button class="checkout-button"> <div>Checkout</div><div> <i class="fa-solid fa-angle-right"></i></div></button></a>
                     </div>
                 </div>
                 
             </div>
+            <div class="menu-container"><button onclick="openNav()"><i class="fa-solid fa-bars" style="color: #010409;"></i></button></div>
         </nav>
 
         <div class="header-menu">
@@ -128,6 +129,14 @@
         </div>
     </header>
 
+    <div id="mySidenav" class="sidenav">
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+  <a href="#">Your Account</a>
+  <a href="#">Your Orders</a>
+  <a href="#">Your Wishlist</a>
+  <a href="#">Login</a>
+</div>
+
 
 
     <section class="hero-container hidden">
@@ -146,7 +155,7 @@
         <a href="#" class="shop-link hidden hidden-up"
             style="display: flex; align-items: center; justify-content: center;">
             <div class="shop-now-container">
-                <div class="shop-now" style="display: flex; align-items: center; justify-content: center;">Shop Now
+                <div class="shop-now" style="display: flex; align-items: center; justify-content: center; color: whitesmoke;">Shop Now
                 </div>
                 <div class="arrow" id="arrow"><i class="fa-solid fa-angle-right"></i></div>
             </div>

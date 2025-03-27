@@ -187,5 +187,9 @@ input{
     .login-img-container{
         display: none;
     }
+
+    .login-container{
+        width: 100%;
+    }
     
 }

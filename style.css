@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* color: whitesmoke; */
+    color: whitesmoke;
     font-family: Montserrat, sans-serif;
 }
 html{
@@ -389,12 +389,17 @@ body{
 
   .trending-card-imagecont{
     height: 14rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
     border: 1px dashed #363434;
     border-radius: 5px;
+
   }
 
   .trending-card-image{
-    width: 100%;
+    width: 90%;
     height: auto;
     object-position: center;
     object-fit: cover;
@@ -413,7 +418,9 @@ body{
   .trending-card-list .trending-card-link .trending-card-title{
     font-weight: 600;
     color: #363434;
-    width: fit-content;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .trending-card-list .trending-card-link .trending-card-button{
@@ -620,9 +627,15 @@ body{
     justify-content: space-between;
   }
 
+  .cart-item-name{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
   .cart-item-name, .cart-item-price, .cart-item-quantity{
-    font-size: 0.7rem;
-    font-weight: 400;
+    font-size: 0.8rem;
+    font-weight: 500;
     width: 5rem;
     color: #6633cc;
     text-align: center;

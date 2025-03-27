@@ -38,6 +38,35 @@ new Swiper('.trending-card-wrapper', {
 
 
 
+let p = fetch('data.json')
+.then(res => res.json())
+.then(data => {
+  data.forEach(element => {
+    let card = document.createElement('div');
+    let url = element.img1;
+    let newPrice = element.new_price;
+    let dispayPrice = newPrice!="" ? newPrice : element.old_price;
+    let imgsrc  = "https://lh3.googleusercontent.com/d/" + url;
+    card.classList.add('trending-card-item');
+    card.classList.add('swiper-slide');
+    card.id = element.id;
+    console.log(imgsrc)
+    // 1o2rhUUYgSP2I2dyKdaAvoSPuiGarZffu
+    card.innerHTML = `
+    <div class="trending-card-link">
+    <div class="trending-card-imagecont">
+    <img class="trending-card-image" src="${imgsrc}" alt="${element.name}">
+    </div>
+    <button class="trending-card-button" onclick="addToCart('${element.name}', ${dispayPrice})">ADD TO CART</button>
+    <div class="trending-card-text">
+    <div class="trending-card-price">$ ${dispayPrice}</div>
+    <div class="trending-card-title">${element.name}</div>
+  </div>
+    `;
+    document.querySelector('.trending-card-list').appendChild(card);
+  });
+})
+
 
 
 function openNav() {
@@ -56,14 +85,13 @@ const map = new Map();
 let total = 0;
 
 const addToCart = (name, price) => {
-
+  
   const checkoutbtn = document.getElementById('checkout-btn');
   if (checkoutbtn) {
     checkoutbtn.style.display = 'block';
   }
   
-  map.set(name, map.get(name) ? map.get(name) + 1 : 1);
-  total += price;
+  
   
   const refreshTotalPrice = () => {
     const totalValue = document.querySelector('.total-value');
@@ -106,6 +134,7 @@ const addToCart = (name, price) => {
   map.set(name, (map.get(name) || 0) + 1);
 
   refreshTotalPrice(); 
+
 
   
   const existingItem = document.querySelector(`.cart-item[data-name="${name}"]`);
@@ -171,6 +200,8 @@ const addToCart = (name, price) => {
     item.appendChild(itemValue);
     offset.appendChild(item);
   }
+  console.log(map);
+
 };
 function headerOptionClick(e){
   e.preventDefault();

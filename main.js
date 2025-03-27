@@ -38,16 +38,7 @@ new Swiper('.trending-card-wrapper', {
 
 
 
-// const emailInput = document.getElementById('email-input');
 
-// emailInput.addEventListener('input', () => {
-//   const emailValue = emailInput.value;
-//   localStorage.setItem('email', emailValue);
-// });
-
-// emailInput.addEventListener('click', () => {
-//   console.log('email input clicked');
-// });
 
 function openNav() {
   document.getElementById("mySidenav").style.width = "15rem";
